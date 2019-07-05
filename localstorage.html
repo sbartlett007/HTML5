@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Localstorage</title>
+        <script type="text/javascript">
+        function load() {
+            try
+            {
+                var value = sessionStorage.getItem("myKey");
+
+                if (!value) {
+                    alert("Item not found, adding to local storage");
+                    sessionStorage.setItem("myKey", "myValue1");
+                }
+                else {
+                    alert(value + " found!");
+                }
+
+            } catch (e){}
+
+        }
+        </script>
+    </head>
+    <body onload="load()">
+        
+    </body>
+</html>

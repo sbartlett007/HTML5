@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Geolocation</title>
+        <script>
+            var messageDiv = document.getElementById('message');
+
+            function initLocation() {
+                var geolocation = navigator.geolocation;
+
+                if (geolocation){
+                    try {
+                        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+                    } catch (err) {
+                        message.innerHTML = 'Something broke';
+                    }
+                }
+                else {
+                    message.innerHTML = 'Your browser is old and not very good.';
+                }
+            }
+
+            function successCallback(location) {
+                message.innerHTML = "<p>Latitude: " + location.coords.latitude + "</p>";
+                message.innerHTML += "<p>Longitude: " + location.coords.longitude + "</p>";
+            }
+
+            function errorCallback() {
+                message.innerHTML = 'There was an error looking up your position';
+            }
+        </script>
+    </head>
+    <body onload="initLocation()">
+        <div id="message">Looking up location</div>
+    </body>
+</html>

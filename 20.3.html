@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Timeout Example</title>
+        <script type="text/javascript">
+            var counter = 181;
+            timeoutID = window.setTimeout("Update();", 1000);
+
+            function Update() {
+                counter--;
+                var textField = document.getElementById("showText");
+                textField.innerHTML = "The counter is now at " + counter;
+
+                timeoutID = window.setTimeout("Update();", 2000);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>TImeout Example</h1>
+        <p>The counter will update every two seconds.</p>
+        <p id="showText"></p>
+        <div>
+            <button type="button" onclick="counter=0; Update()">RESTART</button>
+            <button type="button" onclick="window.clearTimeout(timeoutID);">STOP</button>
+        </div>
+    </body>
+</html>

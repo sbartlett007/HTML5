@@ -1,0 +1,38 @@
+header, footer {
+  float: left;
+  width: 100%;
+  background-color: #7152f4;
+  color: #ffffff  
+}
+
+#wrapper {
+    float: left;
+    width: 100%;
+    display: block;
+}
+
+#left_side {
+    position: relative;
+    float: left;
+    width: 33%;
+    background-color: #52f455;
+}
+
+#right_side {
+    position: relative;
+    float: left;
+    width: 33%;
+    background-color: #f452d5;
+}
+
+#middle {
+    position: relative;
+    float: left;
+    width: 33%;
+    background-color: #42153c;
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 525px;
+}
